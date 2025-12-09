@@ -1,62 +1,56 @@
-📘 README – CVAT Annotation Visualization
-This repository contains a Python script that visualizes CVAT polyline annotations on top of the original images.
-The script reads your annotations.xml, overlays all annotation polylines on the corresponding image files, and saves the output.
+# 📘 CVAT Annotation Visualization
 
-📦 Folder Structure
+This repository contains a **Python script** designed to visualize **CVAT polyline annotations** overlaid on the original image files.
 
-Organize your project like this:
+The script reads your `annotations.xml` file, overlays all annotation polylines onto the corresponding images, and saves the output.
 
+---
+
+## 📦 Folder Structure
+
+Organize your project files in the following structure for the script to run correctly:
 project/
 │
-├── annotations.xml
+├── annotations.xml         <-- Your CVAT output file
 │
-├── images/
-│     ├── scene00001.png
-│     ├── scene00006.png
-│     ├── scene00011.png
-│     └── ... (all image frames)
+├── images/                 <-- All the image frames go here
+│     ├── scene00001.png
+│     ├── scene00006.png
+│     ├── scene00011.png
+│     └── ... (and so on)
 │
-└── overlay.ipynb
+└── overlay.ipynb           <-- The visualization script/notebook
 
-▶️ How to Use
-1. Install Requirements
+---
 
-Make sure you have OpenCV installed:
+## ▶️ How to Use
 
+### 1. Install Requirements
+
+Ensure you have the necessary libraries installed.
+
+# Required: OpenCV for image manipulation and drawing
 pip install opencv-python
 
-
-(Optional but recommended)
-
+# Optional but Recommended: NumPy for efficient array handling
 pip install numpy
+bash
 
-2. Run the Script
+# Run the script: python annotate_cvat.py
 
-Save the visualization script as annotate_cvat.py, then run:
+# Output: annotated_output/
 
-python annotate_cvat.py
+# script overview
+The script performs the following steps:
 
-3. Output
+Loads the annotations.xml file.
 
-Annotated images will be saved inside:
+Extracts all <image> tags.
 
-annotated_output/
+Reads the name field (e.g., "scene00001.png") to find the corresponding image file.
 
+Parses each <polyline> associated with that image to get the coordinate data.
 
-Each output image will have green polylines showing your "liver annotation".
+Draws the polylines on the image using OpenCV functions.
 
-🧠 Script Overview
-
-The script:
-
-Loads annotations.xml
-
-Extracts all <image> tags
-
-Reads their name field (e.g., "scene00001.png")
-
-Parses each <polyline> associated with that image
-
-Draws the polylines on the image using OpenCV
-
-Saves them to annotated_output/
+Saves the annotated image to the annotated_output/ directory.
