@@ -11,15 +11,25 @@ The script reads your `annotations.xml` file, overlays all annotation polylines 
 Organize your project files in the following structure for the script to run correctly:
 
 project/
+
 │
+
 ├── annotations.xml         <-- Your CVAT output file
+
 │
+
 ├── images/                 <-- All the image frames go here
+
 │     ├── scene00001.png
+
 │     ├── scene00006.png
+
 │     ├── scene00011.png
+
 │     └── ... (and so on)
+
 │
+
 └── overlay.ipynb           <-- The visualization script/notebook
 
 ---
