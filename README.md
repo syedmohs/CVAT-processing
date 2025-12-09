@@ -9,6 +9,7 @@ The script reads your `annotations.xml` file, overlays all annotation polylines 
 ## 📦 Folder Structure
 
 Organize your project files in the following structure for the script to run correctly:
+
 project/
 │
 ├── annotations.xml         <-- Your CVAT output file
